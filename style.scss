@@ -1,0 +1,18 @@
+$colors: (
+  primary: #45a29e,
+  primary-light: #66fcf1,
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; //Mr. Whalen I forgot what this means? Who cares, set it and forget it
+  font-size: 62.5%; //50% on iphone
+  //PX's are for monkeys, rem = relative units, 1 rem = 10px, vh = viewport  height or vw = viewport width 95vw === 95% of screen width hh
+  //allan is cool
+  background-color: color(primary-light);
+}
