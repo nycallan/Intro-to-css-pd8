@@ -1,18 +1,41 @@
-$colors: (
-  primary: #45a29e,
-  primary-light: #66fcf1,
-);
-
-@function color($color-name) {
-  @return map-get($colors, $color-name);
-}
+@import "_variables.scss";
+//px's are for monkeys, rem OR relative units, 1rem = 10px, vw = viewport width AND VH= viewport height
 html,
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; //Mr. Whalen I forgot what this means? Who cares, set it and forget it
-  font-size: 62.5%; //50% on iphone
-  //PX's are for monkeys, rem = relative units, 1 rem = 10px, vh = viewport  height or vw = viewport width 95vw === 95% of screen width hh
-  //allan is cool
-  background-color: color(primary-light);
+  box-sizing: border-box;
+  font-size: 62.5%; //1 rem === 10px
+}
+.header {
+  height: 100vh;
+  display: flex;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(color(primary), 0.5),
+      rgba(color(primary-light), 0.5)
+    ),
+    url(img/headphones-bg.jpg);
+  background-size: cover;
+
+  position: relative;
+  /* flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+}
+.header-text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.header-primary {
+}
+
+.header-primary-main {
+  display: block;
+  font-size: 10rem;
+}
+.header-primary-sub {
+  font-size: 4rem;
 }
